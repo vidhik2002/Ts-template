@@ -3,9 +3,7 @@ import config from "config";
 import cors from "cors";
 import logger from "./utils/logger";
 
-
-
-// const port = config.get<number>("port");
+const port = config.get<number>("port");
 
 const app = express();
 
@@ -15,8 +13,8 @@ app.use(
 );
 app.use(express.json());
 
-app.listen(3000, async () => {
+app.listen(port, async () => {
     logger.info(
-      `App is running at http://localhost:3000 `
+      `App is running at http://localhost:${port} `
     );
 });
